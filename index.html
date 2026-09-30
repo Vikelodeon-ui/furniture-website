@@ -3,66 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERA's Furniture & Landscape</title>
-    <link rel-"stylesheet" href-"CSS/stylesheet.css">
-</head>
-<body>
+    <title>Furniture Website</title>
+
+
+<style>
+
+  *  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   
+   .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+   }
+
+   .hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+   }
+
+   .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+
+}
+
+    .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    }
+
+    .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    }
+
+    .btn {
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 10px 25px;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #f5f5f5;
+        color: black;
+    }
+
+    .card-section {
+        background-color: #f5f5f5;
+        padding: 180px 50px;
+        text-align: center;
+    }
+
+    .card-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #333
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        transform: translateY(40px);
+        opacity: 0;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .card.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-content {
+        padding: 10px;
+    }
+
+    .card-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #222;
+    }
+
+    .card-content p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 15px;
+    }
+
+    .card-content a {
+        text-decoration: none;
+        color: white;
+        background-color: #007BFF;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+
+    .card-content a:hover {
+        transition: background-color 0.3s ease;
+    }
+
+    .footer {
+        background-color: #000;
+        color: white;
+        width: 100%;
+        padding: 40px 0;
+        text-align: center;
+        position: relative;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
     
-    <section class-"hero">
-        <h1>Your palce for Everything Furniture and Landscape</h1>
-    </section>
+    .footer-links {
+        margin-top: 15px;
+    }
 
-    <div class="nav-buttons">
-        <a href="#cards">Learn More</a>
-        <a href="#cheatsheets">Cheatsheets</a>
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: #007BFF;
+    }
+
+    </style>
+
+  </head>
+ <body>
+
+     <!-- Hero Section -->
+
+     <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="videos/Hero Furniture BG13.mp4" type="video/mp4">
+        </video>
+
+    <div class="hero-content">
+      <h1>Your Place for Everything Furniture and Landscape</h1>
+      <p>Me design and create an inviting and showcase environment for parties.</p>  
+      <a href="#cards" class="btn">Learn More</a>
+      <a href="auth/login.html" class="btn">Login to view our showcase</a>
     </div>
+     </section>
 
-    <header>
-        <h3>We design and create inviting outdoor environments</h3>
-        <p>Beautiful landscapes and quality furniture for your home</p>
-    </header>
+     <!-- Card Section -->
 
-    <main>
-        <h2>Featured Projects</h2>
+     <section id="cards" class="card-section">
+        <h2>Our Featured Services</h2>
+        <div class="card-container">
+            <div class="card">
+            <img src="images/Ouside Furniture Card.jpeg" alt="Shrubs and Plants">
+            <div class="card-content">
+            <h3>Shrubs and Plants</h3>
+            <p>Refresh your yard with hand-picked shrubs and seasonal plants, delivered and arranged by our landscaping team.</p>
+            <a href="#">Read More</a>
+       </div>
+      </div>
 
-        <div class="image-grid">
-            <div class="image-card">
-                <img src="https://picsum.photos/id/1018/600/400" alt="Modern outdoor patio furniture set with wooden table and chairs">
-            </div>
+      <!-- CARD 2 -->
+       <div class="card">
+            <img src="images/Outside Furniture Card2.jpeg" alt="Backyard Coverings">
+            <div class="card-content">
+            <h3>Backyard Coverings</h3>
+            <p>Durable perogolas and shade sails built to handle sun, wind, and rain year-round.</p>
+            <a href="#">Read More</a>
+       </div>
+      </div>
 
-            <div class="image-card">
-                <img src="https://picsum.photos/id/251/600/400" alt="Beautiful landscaped garden with stone pathway and plants">
-            </div>
+      <!-- CARD 3 -->
+       <div class="card">
+            <img src="images/Ouside Furniture Card1.jpeg" alt="Patio">
+            <div class="card-content">
+            <h3>Patio</h3>
+            <p>Beautiful Patio for Family Gatherings.</p>
+            <a href="#">Read More</a> 
+       </div>
+      </div>
 
-
-            <div class="image-card">
-                <img src="https://picsum.photos/id/160/600/400" alt="Cozy outdoor lounge area with comfortable seating and lighting">
-            </div>
-
-
-        </div>
-    </main>
-
-
-    <section id="cheatseets" style="padding: 40px 20px; max-width: 800px; margin: auto">
-        <h2>Cheatsheets</h2>
-        <p>Reference guides for CSS and Javascript</p>
-
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-
-            <a href="#" style="display: block; padding: 20px; background: #10b981";
-                color: white; border-radius: 8px;
-                text-decoration: none;
-                width: 200px; text-align: center;
-                >35 Cheatsheet</a>
-        </div>
+      <!-- CARD 4 -->
+         <div class="card">
+                <img src="images/Hero Landscaping BG11.jpeg" alt="Walking Pads">
+                <div class="card-content">
+                <h3>Walking Pads</h3>
+                <p>Stone and paver walking paths designed to connect every corner of your outdoor space.</p>
+                <a href="#">Read More</a>
+         </div>
+       </div>
+      </div>
     </section>
 
-    <footer>
-
-        <p>&copy; 2026 ERA Solutions. All Rights Reserved.</p>
-
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> ERA Academy. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#about">About Us</a>
+            <a href="#Contact">Contact</a>
+            <a href="#Privacy">Privacy Policy</a>
+          </div>
+       </div>
     </footer>
 
-</body>
+    <!-- JAVASCRIPT SECTION -->
+       <script>
+         // 1. Smooth Scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+        });
+
+        // 2. Card scroll in animation
+        const cards = document.querySelectorAll(".card");
+        const revealCards = () => {
+            const triggerBottom = window.innerHeight * 0.8;
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < triggerBottom) {
+                  card.classList.add("show");
+                }
+            });
+         };
+         window.addEventListener("scroll", revealCards);
+         revealCards();
+
+         // 3. Dynamic year update in footer
+         document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+ </body>
 </html>
